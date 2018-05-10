@@ -23,5 +23,8 @@
     <ClCompile Include="..\..\..\SRC\ALG_src\SqListLink\SqList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\ALG_unit_test\SqListLink\SqList_unit_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

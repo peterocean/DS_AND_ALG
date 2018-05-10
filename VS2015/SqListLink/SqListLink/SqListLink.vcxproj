@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\SRC\ALG_src\SqListLink\SqList.cpp" />
+    <ClCompile Include="..\..\..\SRC\ALG_unit_test\SqListLink\SqList_unit_test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
