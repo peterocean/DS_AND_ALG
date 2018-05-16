@@ -113,6 +113,14 @@ SQLIST_STAT_t SqList_create(SqListNodePtr L, SqList_Elem_type_t elem[], int16_t 
 	return SQLIST_STAT_SUCCESS;
 }
 
+SQLIST_STAT_t SqList_merge(SqListNodePtr La, SqListNodePtr Lb,SqListNodePtr Lc)
+{
+	int16_t i=0, j=0, k=0;
+	SqList_Elem_type_t La_elem,Lb_elem,Lc_elem ;
+	
+
+}
+
 int16_t SqList_size(SqListNodePtr L)
 {
 	int16_t size = 0;
