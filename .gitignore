@@ -9,3 +9,5 @@ sourceinsight/
 #for VS2015 project
 LinkStack/VC2015/LinkStack/Debug/
 LinkStack/VC2015/LinkStack/LinkStack/Debug/
+Queue/VC2015/Queue/Debug/
+Queue/VC2015/Queue/Queue/Debug/
