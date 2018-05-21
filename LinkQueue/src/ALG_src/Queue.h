@@ -15,3 +15,9 @@ typedef struct {
 	QueueNode *front;		
 	QueueNode *rear;
 }Queue_t;
+typedef Queue_t *QueuePtr;
+
+typedef enum {
+	QUEUE_STAT_SUCCESS = 0,
+	QUEUE_STAT_FAIL,
+}QUEUE_STAT_t;
