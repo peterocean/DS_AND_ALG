@@ -18,9 +18,15 @@
     <ClInclude Include="..\..\..\src\ALG_src\Queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\Unit_test\Queue_Unit_Test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\ALG_src\Queue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Unit_test\Queue_Unit_Test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
