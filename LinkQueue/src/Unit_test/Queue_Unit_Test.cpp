@@ -8,12 +8,17 @@ BOOL Queue_EnterQueue_Test(void)
 {
 	U16_t index = 0;
 	Queue_t Q ;
+	U8_t  *p_TestArray = (U8_t*)malloc(TEST_QUEUE_SIZE*sizeof(U8_t));
 
+	/*创建测试序列*/
+	for (index = 0; index < TEST_QUEUE_SIZE; index++) {
+		p_TestArray[index] = rand() % 1000;
+	}
 	printf("Queue_EnterQueue() test start:\n");
 
 	Queue_Init(&Q);
-	for (index = 0; index < 10; index++) {
-		Queue_EnQueue(&Q, index);
+	for (index = 0; index < TEST_QUEUE_SIZE; index++) {
+		Queue_EnQueue(&Q, p_TestArray[index]);
 	}
 	printf("\n");
 	Queue_Print(&Q);
@@ -27,7 +32,7 @@ BOOL Queue_dequeue_Test(void)
 	int16_t index = 0;
 	QueueElem_t elem = 0;
 	Queue_t Q;
-	U8_t  *p_TestArray = (U8_t*)malloc(TEST_QUEUE_SIZE);
+	U8_t  *p_TestArray = (U8_t*)malloc(TEST_QUEUE_SIZE*sizeof(U8_t));
 
 	printf("Queue_dequeue() test start:\n");
 
@@ -39,7 +44,7 @@ BOOL Queue_dequeue_Test(void)
 	for (index = 0; index < TEST_QUEUE_SIZE; index++) {
 		p_TestArray[index] = rand() % 1000;
 	}
-	/*测试序列入队*/
+	/*序列入队*/
 	for (index = 0; index < TEST_QUEUE_SIZE; index++) {
 		Queue_EnQueue(&Q, p_TestArray[index]);
 	}
@@ -47,10 +52,11 @@ BOOL Queue_dequeue_Test(void)
 	Queue_Print(&Q);
 	
 	/*出队测试*/
+	printf("element dequeu.\n");
 	index = 0;
 	while (Queue_DeQueue(&Q,&elem) != QUEUE_STAT_FAIL)
 	{
-		printf("%d,", elem);
+		printf("%d, ", elem);
 		if (elem != p_TestArray[index++]) {
 			printf("Queue_dequeu() test fail.\n");
 			return FALSE;

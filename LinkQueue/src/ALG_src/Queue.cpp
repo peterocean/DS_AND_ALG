@@ -32,15 +32,16 @@ QUEUE_STAT_t Queue_EnQueue(QueuePtr Q, QueueElem_t elem)
 
 QUEUE_STAT_t Queue_DeQueue(QueuePtr Q, QueueElem_t *elem)
 {
-	QueueNodePtr p = NULL;
+	QueueNodePtr  p = NULL;
 
-	if (Q->front != Q->rear) {
+	if (Q->front->next != NULL) {
 		p = Q->front->next;
-		if (p != NULL) {
-			Q->front = p->next;
-		}
-		if (p == Q->rear)
+		*elem = p->elem;
+		Q->front->next = p->next;
+		if (p == Q->rear) {
 			Q->rear = Q->front;
+		}
+		free(p);
 		return QUEUE_STAT_SUCCESS;
 	}
 	return QUEUE_STAT_FAIL;
